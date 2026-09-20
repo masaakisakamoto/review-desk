@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ja">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Review Desk — 文字の位置確認</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      color: #282a2c;
+      background: #faf9f6;
+      font:
+        17px/1.8 system-ui,
+        sans-serif;
+    }
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 30px;
+    }
+    h1 {
+      width: 100%;
+      padding: 50px 0;
+      font-size: clamp(24px, 5vw, 60px);
+      text-align: center;
+      font-weight: 600;
+    }
+    h2 {
+      margin-top: 45px;
+    }
+    .hint {
+      color: #62676b;
+      max-width: 700px;
+    }
+    .spacer {
+      height: 75vh;
+      border-left: 1px solid #d6d8d5;
+      margin: 30px 0;
+      padding-left: 20px;
+    }
+    .scrollbox {
+      height: 240px;
+      overflow: auto;
+      border: 1px solid #aeb7b1;
+      border-radius: 10px;
+      padding: 25px;
+    }
+    .wrap {
+      max-width: 400px;
+      font-size: 28px;
+    }
+    code {
+      font-size: 0.9em;
+    }
+  </style>
+  <main>
+    <p>REVIEW DESK / FICTIONAL TEST PAGE</p>
+    <p class="hint">
+      拡張機能を使う手動確認用ページです。<code>npm run demo</code
+      >で起動し、<code>http://127.0.0.1:8765/demo/text-pins.html</code>をChromeで開いてください。このページを同梱しただけでは実機確認済みにはなりません。
+    </p>
+    <h1 id="centered">言葉のすぐそばに。</h1>
+    <p class="hint">
+      「文字」で見出しの一部を選びます。番号が画面の左端ではなく、その文字のすぐ横に出ることを確認してください。上下にスクロールし、画面外では消え、戻ると同じ文字のそばに出ることを確認します。
+    </p>
+    <div class="spacer">Scroll / スクロールして確認</div>
+    <h2>同じ文言がある場合</h2>
+    <p id="repeated">午前の枠は予約する。午後の枠も予約する。</p>
+    <p class="hint">
+      2つ目の「予約する」を指定し、ページ再読み込み後にも午後の文言を指すことを確認します。
+    </p>
+    <h2>折り返しと途中の装飾</h2>
+    <p class="wrap" id="wrapped">
+      この文章は<strong>途中に装飾</strong>があり、狭い幅では複数行に折り返します。
+    </p>
+    <p class="hint">
+      装飾をまたいで選択します。画面幅を変え、表示中の選択文字の行に番号が追従することを確認します。
+    </p>
+    <h2>枠の中だけをスクロール</h2>
+    <div class="scrollbox">
+      <p id="inner-top">枠の中の選択文字です。</p>
+      <div style="height: 400px"></div>
+      <p id="inner-bottom">枠の下にある選択文字です。</p>
+    </div>
+    <p class="hint">
+      枠内の文字を指定してから、枠だけをスクロールします。保存したメモは一覧からも開けます。
+    </p>
+  </main>
+</html>

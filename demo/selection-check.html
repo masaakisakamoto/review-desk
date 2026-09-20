@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Review Desk — 選択操作の確認</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #faf9f6;
+        color: #292b2d;
+        font:
+          17px/1.8 system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 50px 28px;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: 600;
+        letter-spacing: -1px;
+      }
+      h2 {
+        font-size: 23px;
+      }
+      section {
+        padding: 24px 0;
+        border-top: 1px solid #d9dcd7;
+      }
+      .note {
+        color: #657069;
+        max-width: 720px;
+      }
+      a {
+        color: #25604a;
+      }
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+        padding: 10px;
+        border: 1px solid #b7c3ba;
+        border-radius: 8px;
+        background: white;
+        color: #292b2d;
+      }
+      .targets {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .box {
+        padding: 24px;
+        border: 1px solid #b7c3ba;
+        border-radius: 8px;
+      }
+      .scrollbox {
+        height: 240px;
+        overflow: auto;
+      }
+      #events {
+        position: sticky;
+        top: 0;
+        background: #e9eee9;
+        padding: 12px 18px;
+        border-radius: 8px;
+        z-index: 1;
+      }
+      code {
+        font-size: 14px;
+      }
+      .spacer {
+        height: 60vh;
+      }
+      #locked {
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      #pseudo::before {
+        content: "これはCSSで描いた文字です";
+        font-weight: 600;
+      }
+      #pseudo {
+        min-height: 65px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>REVIEW DESK / FICTIONAL INTERACTION CHECK</p>
+      <h1>「文字」と「見た目の文字」。</h1>
+      <p class="note">
+        実際のChrome拡張機能で確認する架空のページです。<code>npm run demo</code
+        >で起動し、<code>http://127.0.0.1:8765/demo/selection-check.html</code>を開いてください。ページを用意したことは、確認済みを意味しません。
+      </p>
+      <p id="events" role="status">サイト側のクリック 0 回 / ドラッグ 0 回</p>
+      <section>
+        <h2>1. 普通の文字とリンク</h2>
+        <p id="plain">これは普通の文字です。短い部分だけ選んで記録します。</p>
+        <p>
+          <a id="text-link" href="#destination" data-action
+            >リンクになっている文字を選択してください。</a
+          >
+        </p>
+        <p>
+          <button id="label-button" type="button" data-action>
+            このボタンの文字も選べます
+          </button>
+        </p>
+        <p class="note">
+          「文字」モードでドラッグし、メモができること、サイト側クリック/ドラッグが増えないことを確認します。「見る」に戻した後は、リンク・ボタンが通常どおり動くことを確認します。
+        </p>
+      </section>
+      <section>
+        <h2>2. 選択を禁止している文章</h2>
+        <p id="locked" style="user-select: none !important; cursor: help">
+          サイトが通常の文字選択を禁止している文章です。
+        </p>
+        <p class="note">
+          文字モード中に選択でき、Escまたは「見る」で元の選択禁止・カーソルへ戻ることを確認します。
+        </p>
+      </section>
+      <section>
+        <h2>3. 画像・図形・CSSの文字</h2>
+        <a href="#destination" data-action
+          ><img
+            src="text-artwork.svg"
+            width="600"
+            height="180"
+            alt="架空の文字入り画像"
+        /></a>
+        <div class="targets">
+          <svg width="230" height="90" aria-label="図形内の文字">
+            <rect width="230" height="90" rx="10" fill="#e1e7df" />
+            <text x="16" y="52" font-size="18">SVGの図形と文字</text></svg
+          ><canvas
+            width="230"
+            height="90"
+            aria-label="キャンバスの対象"
+          ></canvas>
+        </div>
+        <div id="pseudo" class="box"></div>
+        <p class="note">
+          文字モードで対象に触れると「場所」「囲む」の案内が出ることを確認します。画像内の文字認識は行いません。代替ボタンから切り替えて、対象を記録します。
+        </p>
+      </section>
+      <section>
+        <h2>4. 入力欄</h2>
+        <div class="targets">
+          <input aria-label="架空の入力欄" value="架空の入力内容" />
+          <input
+            aria-label="架空のパスワード欄"
+            type="password"
+            value="fictional-only"
+          />
+          <textarea aria-label="架空の文章欄">架空の文章欄です。</textarea>
+          <select aria-label="架空の選択肢">
+            <option>架空の選択肢</option>
+          </select>
+          <div contenteditable="true" class="box" aria-label="架空の編集領域">
+            編集できる架空の文章です。
+          </div>
+        </div>
+        <p class="note">
+          文字モードでは内容を元の文章として取り込まず、記録方法の案内を出します。入力内容が変わらないことを確認してください。「場所」「囲む」での撮影には見えている内容が写ります。
+        </p>
+      </section>
+      <section>
+        <h2>5. 複数行と枠内スクロール</h2>
+        <div class="scrollbox box">
+          <p id="wrapped" style="max-width: 350px; font-size: 26px">
+            途中に<strong>太字の装飾がある</strong>文章を、右から左にもドラッグしてください。折り返した行まで含めて記録します。
+          </p>
+          <div style="height: 300px"></div>
+          <p>スクロールした先の文字です。</p>
+        </div>
+        <p class="note">
+          選択文字のそばに番号が出ること、枠内スクロールに追従することを確認します。文字が枠の外へ隠れたら番号も隠れます。
+        </p>
+      </section>
+      <section>
+        <h2>6. 続けて記録・キャンセル</h2>
+        <ol>
+          <li>
+            文字を記録し、メモを入力。「続けて文字を指定」で別の文字を記録します。
+          </li>
+          <li>
+            ドラッグ途中でEsc。メモを増やさず、通常の閲覧に戻ることを確認します。
+          </li>
+          <li>
+            「囲む」でクリックだけします。小さな空のメモが作られないことを確認します。
+          </li>
+          <li>
+            右クリック・中クリックでは新規メモを作らないことを確認します。
+          </li>
+          <li>
+            画面をスクロールし、保存したメモと番号が対応することを確認します。
+          </li>
+        </ol>
+      </section>
+      <div class="spacer"></div>
+      <h2 id="destination">リンクの移動先（このページ内）</h2>
+      <p>架空の操作です。フォーム送信や外部通信はありません。</p>
+    </main>
+    <script src="selection-check.js"></script>
+  </body>
+</html>

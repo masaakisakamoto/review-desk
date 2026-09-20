@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fieldnotes Studio — fictional review demo</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <div class="demo-label">
+      <span
+        >REVIEW DESK / Fictional demo. No customer data.
+        架空のサイトです。</span
+      ><span>Chromeの拡張機能からReview Deskを起動してください。</span>
+    </div>
+    <header>
+      <b>FIELDNOTES / STUDIO</b>
+      <nav><a href="#collection">Collection</a><a href="#visit">Visit</a></nav>
+    </header>
+    <main class="sample">
+      <section class="hero">
+        <div>
+          <span class="overline">OBJECTS &amp; ORDINARY DAYS / 001</span>
+          <h1 id="heading">A little space.<br />A slower day.</h1>
+          <p id="description">
+            暮らしの中に、小さな余白を。<br />手に取って選ぶ、日々のための道具。
+          </p>
+          <button id="explore">詳しくはこちら</button>
+          <div id="clicked" role="status"></div>
+        </div>
+        <img
+          src="../extension/sample-object.svg"
+          id="objectPhoto"
+          alt="架空の展示品：白い花器と小さな植物"
+        />
+      </section>
+      <section id="collection" class="cells">
+        <article class="cell">
+          <span>01 / TOUCH</span>
+          <h3>素材を知る。</h3>
+          <p>
+            土、木、布。触れてわかる小さな違いを、ゆっくり確かめてください。
+          </p>
+        </article>
+        <article class="cell">
+          <span>02 / CHOOSE</span>
+          <h3>日々に、ひとつ。</h3>
+          <p>使う場所を思い浮かべながら、自分のための一品を見つけます。</p>
+        </article>
+        <article class="cell" id="visit">
+          <span>03 / VISIT</span>
+          <h3>Visit the studio.</h3>
+          <p>展示の空き状況は、ボタンから確認できます。</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      Fictional interface and original illustration, made for Review Desk
+      demonstrations. All actions stay on this page.
+    </footer>
+    <script src="demo.js"></script>
+  </body>
+</html>
