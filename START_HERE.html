@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Start / Review Desk</title>
+    <link rel="stylesheet" href="extension/ui.css" />
+  </head>
+  <body class="guide">
+    <div class="eyebrow">REVIEW DESK / 1.1.0-BETA.3</div>
+    <h1>「ここを変えたい」を、<br />持ち運べる修正依頼に。</h1>
+    <p class="intro">
+      画面の記録、判断、書き出し、修正後の確認。アカウント登録なしで始められるChrome拡張機能です。
+    </p>
+    <div class="notice">
+      試用候補版です。実際のChromeへの導入・タブ撮影は、この開発環境では未確認です。既存版を使っている場合は、削除せず更新してください。
+    </div>
+    <section>
+      <h2>はじめて使う</h2>
+      <ol>
+        <li>このフォルダを今後移動しない場所へ保存。</li>
+        <li>
+          Chromeで
+          <code>chrome://extensions</code> を開き、デベロッパーモードをオン。
+        </li>
+        <li>
+          「パッケージ化されていない拡張機能を読み込む」で、この中の
+          <code>extension</code> フォルダを選択。
+        </li>
+        <li>普通のWebページでReview Desk →「この画面でメモする」。</li>
+      </ol>
+      <p>
+        <a href="README_JA.md">日本語README</a> ·
+        <a href="README.md">English README</a> ·
+        <a href="docs/UPDATE_JA.md">既存版からの更新</a>
+      </p>
+    </section>
+    <section>
+      <h2>顧客情報なしで、成果物を見る</h2>
+      <p>
+        <a class="button primary" href="examples/meeting/MEETING_REVIEW.html"
+          >画像付きの修正記録を開く</a
+        >
+      </p>
+      <p>
+        サンプル画像は模擬データです。<code>examples/sample.review.json</code>
+        を拡張機能で読み込むと、4件の架空の指摘を操作できます。
+      </p>
+    </section>
+    <section lang="en">
+      <h2>Start in Chrome</h2>
+      <p>
+        Keep this folder in a permanent location. Open
+        <code>chrome://extensions</code>, enable Developer mode and load the
+        <code>extension</code> directory. No build or server is needed. Existing
+        users must update at the same registered path to retain their extension
+        ID.
+      </p>
+      <p>
+        Real extension installation and live-tab capture have not been verified
+        in this environment. Read the validation notes before using the beta in
+        a meeting.
+      </p>
+    </section>
+  </body>
+</html>

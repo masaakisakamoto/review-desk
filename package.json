@@ -1,0 +1,25 @@
+{
+  "name": "review-desk",
+  "version": "1.1.0-beta.3",
+  "private": true,
+  "description": "Local website review notes and portable change requests for Chrome.",
+  "scripts": {
+    "test": "node tests/run-tests.cjs && node tests/startup-tests.cjs && node tests/beta-tests.cjs && node tests/text-pins-tests.cjs && node tests/selection-tests.cjs && python3 tests/updater-tests.py",
+    "check": "node scripts/check.mjs",
+    "demo": "node scripts/serve-demo.mjs",
+    "examples": "node scripts/create-examples.cjs",
+    "package": "node scripts/package.mjs",
+    "format": "prettier --write extension demo scripts tests docs *.md *.json START_HERE.html .github"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "fake-indexeddb": "6.2.5",
+    "happy-dom": "20.14.5",
+    "jszip": "3.10.1",
+    "prettier": "3.6.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
