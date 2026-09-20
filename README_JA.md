@@ -4,15 +4,19 @@
 
 [English](README.md) · [既存版からの更新](docs/UPDATE_JA.md) · [検証結果](docs/VALIDATION.md) · [設計判断](docs/DESIGN.md)
 
-[β版リリース説明](docs/RELEASE_NOTES_1.1.0-beta.3.md) · [架空の修正依頼例](examples/request/REQUEST.md) · [公開準備の状況](docs/RELEASE_PREPARATION.md)
+[β版リリース説明](docs/RELEASE_NOTES_1.1.0-beta.3.md) · [架空の修正依頼例](examples/request/REQUEST.md) · [公開状況](docs/RELEASE_PREPARATION.md)
 
 文字・画像・範囲を指定してコメントを残し、「要相談・修正確定・保留」を整理。人や各種AIへ渡せるZIPを書き出し、同じ指摘番号で修正後の確認まで追えます。アカウント登録とサーバー構築は不要です。
 
-**1.1.0-beta.3：試用候補版です。** 自動検証はChrome APIを模擬しています。この環境では実際のChromeへの導入・実タブ撮影を確認できていません。以前のMacで最初の読み込みが止まった原因も未特定です。公開・打ち合わせ利用の前に[実機チェック](docs/MANUAL_CHROME_CHECKLIST.md)を行ってください。Web Storeには未申請です。β版の操作画面は日本語、README・導入説明・依頼文は日英に対応しています。
+**1.1.0-beta.3：MITライセンスの公開β版ソースです。** 自動検証はChrome APIを模擬しています。この環境では実際のChromeへの導入・実タブ撮影を確認できていません。以前のMacで最初の読み込みが止まった原因も未特定です。打ち合わせへの利用・安定版化の前に[実機チェック](docs/MANUAL_CHROME_CHECKLIST.md)を行ってください。Web Storeには未申請です。β版の操作画面は日本語、README・導入説明・依頼文は日英に対応しています。
 
 文字・リンク・画像に応じた操作案内と「続けて文字を指定」を追加しました。関連する操作の修正と検証範囲は[操作確認報告](docs/OPERATION_REVIEW_JA.md)にまとめています。
 
 文字の番号を選択文字のそばへ配置し、スクロール・リサイズに追従させました。既存メモは文言が一意なら追従します。詳しくは[今回の修正](docs/TEXT_PIN_FIX.md)を参照してください。
+
+[β版をダウンロード](https://github.com/masaakisakamoto/review-desk/releases) · [GitHub上の検証結果](https://github.com/masaakisakamoto/review-desk/actions/runs/35487399284)
+
+ユーザーからβ3について「問題ない」との報告を受けています。ただし、項目別の実Chromeチェック完了とは区別しています。
 
 ## 新規導入
 

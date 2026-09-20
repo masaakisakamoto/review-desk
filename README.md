@@ -8,11 +8,15 @@ Turn a website review into a portable change request.
 
 A small Chrome extension for developers, designers and people reviewing websites together. Point to text, an image or a region, add a note, agree what should change, and hand off an image-backed ZIP to a person or an AI tool. Follow the same issue code through implementation and verification.
 
-**1.1.0-beta.3 — local trial candidate.** Automated tests use simulated Chrome APIs. Installing this build in a real Chrome profile and capturing a real tab have **not** been verified here. The original Mac startup cause is unresolved. Complete the [Chrome checklist](docs/MANUAL_CHROME_CHECKLIST.md) before publishing or relying on it in a meeting. There is no Web Store listing yet. The beta interface is Japanese; setup guides and generated request packets support English and Japanese.
+**1.1.0-beta.3 — public beta source under MIT.** Automated tests use simulated Chrome APIs. Installing this build in a real Chrome profile and capturing a real tab have **not** been verified here. The original Mac startup cause is unresolved. Complete the [Chrome checklist](docs/MANUAL_CHROME_CHECKLIST.md) before relying on it in a meeting or claiming stable support. There is no Web Store listing yet. The beta interface is Japanese; setup guides and generated request packets support English and Japanese.
 
 Text mode includes caret-based link/button selection, contextual Element/Region alternatives and repeat selection. See the [interaction review and manual fixture](docs/OPERATION_REVIEW_JA.md) for fixes and verification boundaries.
 
 Text pins now follow the selected text on scroll and resize, including existing notes with a unique text match. See the [text pin fix and manual fixture](docs/TEXT_PIN_FIX.md).
+
+[Download the beta release](https://github.com/masaakisakamoto/review-desk/releases) · [CI verification](https://github.com/masaakisakamoto/review-desk/actions/runs/35487399284)
+
+The maintainer reported that beta.3 works for them. This is useful feedback, but the structured real-Chrome checklist remains incomplete.
 
 ## Start
 
