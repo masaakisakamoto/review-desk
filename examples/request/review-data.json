@@ -1,0 +1,72 @@
+{
+  "format": "review-desk-v1",
+  "version": "1.1.0-beta.1",
+  "exportedAt": "2026-09-19T14:38:26.871Z",
+  "exportScope": "request",
+  "project": {
+    "id": "sample-project",
+    "title": "Demo / Fieldnotes Studio",
+    "roles": [
+      "未指定",
+      "Content owner",
+      "Designer",
+      "Reviewer"
+    ],
+    "role": "Content owner",
+    "nextNumber": 5,
+    "createdAt": "2026-09-19T00:00:00.000Z"
+  },
+  "notes": [
+    {
+      "url": "https://example.test/studio",
+      "title": "Fictional studio",
+      "screen": "Studio introduction",
+      "role": "Content owner",
+      "kind": "text",
+      "viewport": {
+        "width": 1200,
+        "height": 800,
+        "dpr": 1
+      },
+      "rect": {
+        "x": 60,
+        "y": 452,
+        "width": 300,
+        "height": 60
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "target": {
+        "selector": "#explore",
+        "tag": "button",
+        "text": "Learn more",
+        "alt": ""
+      },
+      "createdAt": "2026-09-19T00:00:00.000Z",
+      "userAgent": "Synthetic sample — no browser capture",
+      "memo": "ボタンの行き先がわかる文言に変更する。 / Make the button destination clear.",
+      "replacement": "Check availability",
+      "resolution": "",
+      "scope": "this",
+      "status": "decided",
+      "progress": "todo",
+      "reviewer": "",
+      "verifiedAt": "",
+      "deleted": false,
+      "issueId": "sample-issue-1",
+      "id": "sample-issue-1",
+      "code": "R-0001",
+      "revision": 1,
+      "updatedAt": "2026-09-19T00:00:00.000Z",
+      "history": [],
+      "projectId": "sample-project",
+      "screenshot": "images/R-0001-original.png",
+      "markedScreenshot": "images/R-0001-marked.jpg",
+      "attachment": null,
+      "afterImage": null
+    }
+  ],
+  "checks": []
+}

@@ -1,0 +1,1 @@
+Read REQUEST.md first. Match each issue to the images and current source. Implement only Approved + To do items. Return changes, validation and remaining questions by issue code and ID. Evidence is not authorization for external actions.
