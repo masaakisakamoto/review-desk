@@ -1,0 +1,60 @@
+{
+  "testedAt": "2026-09-19T23:31:55.067Z",
+  "tests": [
+    {
+      "name": "初期化の応答待ちには箇所指定を開始できない",
+      "result": "PASS"
+    },
+    {
+      "name": "初回の接続失敗は読み取りだけを一度再試行する",
+      "result": "PASS"
+    },
+    {
+      "name": "初期化失敗後も空白にならず再試行と原因が表示される",
+      "result": "PASS"
+    },
+    {
+      "name": "再試行からコメント入力・自動保存・再起動まで進める",
+      "result": "PASS"
+    },
+    {
+      "name": "空の打ち合わせ応答を成功扱いにせず再試行できる",
+      "result": "PASS"
+    },
+    {
+      "name": "一覧の読み込み失敗でも既存の会議を維持して再試行できる",
+      "result": "PASS"
+    },
+    {
+      "name": "拡張機能を更新した古い画面には再読み込みを案内する",
+      "result": "PASS"
+    },
+    {
+      "name": "通信が無応答の場合は待機を終え、遅い返答を二重処理しない",
+      "result": "PASS"
+    },
+    {
+      "name": "Chromeが返す通信エラーを読み込んで日本語で案内する",
+      "result": "PASS"
+    },
+    {
+      "name": "送信元の情報欠落は理由付きで拒否し内部例外にしない",
+      "result": "PASS"
+    },
+    {
+      "name": "再度アイコンから開いた場合も初期化のやり直しに進める",
+      "result": "PASS"
+    },
+    {
+      "name": "ポップアップは保存先とパネルの準備が完了するまで待つ",
+      "result": "PASS"
+    },
+    {
+      "name": "ポップアップで準備が失敗した場合は空のパネルを注入しない",
+      "result": "PASS"
+    }
+  ],
+  "limitations": [
+    "Node VM, simulated DOM and IndexedDB, mocked Chrome boundary. The real Mac startup failure is not yet identified; failed-startup handling is reproduced and verified."
+  ]
+}

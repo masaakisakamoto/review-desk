@@ -1,0 +1,65 @@
+{
+  "environment": "Node / happy-dom and fake-indexeddb; caret geometry and Chrome capture simulated",
+  "tests": [
+    {
+      "name": "Link text shows guidance, suppresses link drag/navigation and records the chosen substring",
+      "result": "PASS"
+    },
+    {
+      "name": "Selection-disabled text is assisted and exact original inline priorities return on Escape",
+      "result": "PASS"
+    },
+    {
+      "name": "Button labels can be selected without activating the button",
+      "result": "PASS"
+    },
+    {
+      "name": "Image inside link is not mislabelled text and the alternative records the image",
+      "result": "PASS"
+    },
+    {
+      "name": "SVG, canvas and empty background targets offer alternatives without claiming OCR",
+      "result": "PASS"
+    },
+    {
+      "name": "Input, password, textarea, select and editable text do not become original-text records",
+      "result": "PASS"
+    },
+    {
+      "name": "Dragging across editable content is refused even if both endpoints are ordinary text",
+      "result": "PASS"
+    },
+    {
+      "name": "Stale selection, right-button release and a click without dragging create no note",
+      "result": "PASS"
+    },
+    {
+      "name": "Cancelled gestures and window blur cannot leave a stale selection to capture",
+      "result": "PASS"
+    },
+    {
+      "name": "Area clicks are not recorded; reverse dragging still records the intended rectangle",
+      "result": "PASS"
+    },
+    {
+      "name": "Repeat-text action waits for saves and records another note under the next code",
+      "result": "PASS"
+    },
+    {
+      "name": "Failed save keeps the draft panel and blocks changing selection modes",
+      "result": "PASS"
+    },
+    {
+      "name": "Capture in progress ignores mode changes and Escape; overlay stays hidden until capture completes",
+      "result": "PASS"
+    },
+    {
+      "name": "Reverse selection across inline markup uses caret positions and preserves original text",
+      "result": "PASS"
+    },
+    {
+      "name": "Browse/close restores ordinary page actions and preserves newer style edits made by the site",
+      "result": "PASS"
+    }
+  ]
+}

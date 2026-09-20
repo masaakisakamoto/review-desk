@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-19",
+  "result": "PASS",
+  "checks": {
+    "private_project_terms": 0,
+    "credential_like_values": 0,
+    "private_keys": 0,
+    "private_operator_paths": 0,
+    "included_git_history": false,
+    "node_modules_in_release": false,
+    "prior_source_archive_in_release": false,
+    "source_manifest": "PASS",
+    "extension_manifest": "PASS",
+    "store_layout": "PASS"
+  },
+  "assets": "Original generated icons and SVG; only visibly synthetic sample evidence. No real browser screenshot is claimed.",
+  "limits": "Pattern scan plus review of authored materials; not a universal secret or trademark detector. Original source ownership and live screenshots require maintainer publication approval."
+}

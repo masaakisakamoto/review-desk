@@ -1,0 +1,65 @@
+{
+  "environment": "Node / simulated DOM, IndexedDB and Chrome APIs",
+  "tests": [
+    {
+      "name": "Clipped targets keep the intersection with the visible viewport",
+      "result": "PASS"
+    },
+    {
+      "name": "Custom roles survive capture, edit and a backup round trip",
+      "result": "PASS"
+    },
+    {
+      "name": "Legacy 1.0.1 backup retains every note, image, code and deleted record",
+      "result": "PASS"
+    },
+    {
+      "name": "Same IndexedDB stores reopen without a migration or changed IDs",
+      "result": "PASS"
+    },
+    {
+      "name": "Verification needs a result, preserves the issue ID and records time",
+      "result": "PASS"
+    },
+    {
+      "name": "Changing agreed requirements reopens verified work and clears the approval time",
+      "result": "PASS"
+    },
+    {
+      "name": "Discussion, hold, verification and done are excluded from request-only packets",
+      "result": "PASS"
+    },
+    {
+      "name": "Meeting packets link PNG originals and after images correctly, without embedding scripts",
+      "result": "PASS"
+    },
+    {
+      "name": "Image-free export removes every image from every output format",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid prototype enum names and infinite viewport sizes are rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "A blocked database fails explicitly and retries with a fresh connection",
+      "result": "PASS"
+    },
+    {
+      "name": "Database open timeout is recoverable and no automatic write retry occurs",
+      "result": "PASS"
+    },
+    {
+      "name": "Desk failed startup shows retry and disables writes until recovery",
+      "result": "PASS"
+    },
+    {
+      "name": "Rapid edits of verified notes do not accidentally restore old approval",
+      "result": "PASS"
+    },
+    {
+      "name": "Concurrent edit conflict keeps typed draft and offers a recovery download",
+      "result": "PASS"
+    }
+  ]
+}

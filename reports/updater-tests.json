@@ -1,0 +1,34 @@
+{
+  "baseline": "1.1.0-beta.2",
+  "platform": "Python filesystem tests; no real Chrome or macOS picker",
+  "tests": [
+    {
+      "name": "Same-path update, exact backup and idempotent repeat, including spaces",
+      "result": "PASS"
+    },
+    {
+      "name": "Locally modified code is refused without changing bytes",
+      "result": "PASS"
+    },
+    {
+      "name": "New source folder and unrelated folders cannot be overwritten",
+      "result": "PASS"
+    },
+    {
+      "name": "Unexpected files prevent overwrite instead of being deleted",
+      "result": "PASS"
+    },
+    {
+      "name": "Symlink content is rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "Failure between directory swaps restores the exact previous code",
+      "result": "PASS"
+    },
+    {
+      "name": "Corrupted distribution is rejected before touching registered files",
+      "result": "PASS"
+    }
+  ]
+}

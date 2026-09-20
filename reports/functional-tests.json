@@ -1,0 +1,164 @@
+{
+  "testedAt": "2026-09-19T23:31:52.700Z",
+  "tests": [
+    {
+      "name": "URLからクエリと資格情報を除去する",
+      "result": "PASS"
+    },
+    {
+      "name": "危険なHTMLが文字列としてエスケープされる",
+      "result": "PASS"
+    },
+    {
+      "name": "SVGと非画像データは添付できない",
+      "result": "PASS"
+    },
+    {
+      "name": "初回の打ち合わせ作成と永続IDの再利用",
+      "result": "PASS"
+    },
+    {
+      "name": "画面・役割・画像をまとめて保存できる",
+      "result": "PASS"
+    },
+    {
+      "name": "並行作成でも指摘番号が重複しない",
+      "result": "PASS"
+    },
+    {
+      "name": "空の依頼は修正確定にできない",
+      "result": "PASS"
+    },
+    {
+      "name": "文章修正と状態を保存して再読込できる",
+      "result": "PASS"
+    },
+    {
+      "name": "別画面からの古い更新を拒否し最新データを保持",
+      "result": "PASS"
+    },
+    {
+      "name": "ごみ箱は復元できる",
+      "result": "PASS"
+    },
+    {
+      "name": "画面の確認記録が役割別に独立している",
+      "result": "PASS"
+    },
+    {
+      "name": "確定・相談・保留・完了を依頼文で区別する",
+      "result": "PASS"
+    },
+    {
+      "name": "バックアップの読み込みは別の打ち合わせに復元する",
+      "result": "PASS"
+    },
+    {
+      "name": "壊れたバックアップの読み込みが既存記録を変更しない",
+      "result": "PASS"
+    },
+    {
+      "name": "重複番号を持つバックアップを拒否する",
+      "result": "PASS"
+    },
+    {
+      "name": "画像付き再開後の番号が既存番号と衝突しない",
+      "result": "PASS"
+    },
+    {
+      "name": "表示中の同じタブだけを撮影できる",
+      "result": "PASS"
+    },
+    {
+      "name": "他拡張・iframeからの要求は拒否する",
+      "result": "PASS"
+    },
+    {
+      "name": "撮影中にアクティブタブが変わったら画像を採用しない",
+      "result": "PASS"
+    },
+    {
+      "name": "非アクティブなタブから撮影を要求できない",
+      "result": "PASS"
+    },
+    {
+      "name": "メモパネルが起動して役割を選べる（DOMテスト）",
+      "result": "PASS"
+    },
+    {
+      "name": "指定モードのクリックは予約操作を実行しない",
+      "result": "PASS"
+    },
+    {
+      "name": "Element selection blocks bubbling pointer handlers on the target",
+      "result": "PASS"
+    },
+    {
+      "name": "短時間の連続入力を順番どおり自動保存する",
+      "result": "PASS"
+    },
+    {
+      "name": "確定したメモを保存し次の場所を指定できる",
+      "result": "PASS"
+    },
+    {
+      "name": "範囲ドラッグの座標を保存する",
+      "result": "PASS"
+    },
+    {
+      "name": "空メモの確定失敗後も入力を続けて保存できる",
+      "result": "PASS"
+    },
+    {
+      "name": "通常操作に戻るとサイトのボタンを押せる",
+      "result": "PASS"
+    },
+    {
+      "name": "閉じて再起動しても保存したメモが残る",
+      "result": "PASS"
+    },
+    {
+      "name": "文字を選択して変更前の文章と修正文を保存する",
+      "result": "PASS"
+    },
+    {
+      "name": "画像の指定を画像変更の記録として保存する",
+      "result": "PASS"
+    },
+    {
+      "name": "メモ一覧が保存済みデータを読み込む",
+      "result": "PASS"
+    },
+    {
+      "name": "一覧から編集・確定・保存の状態を確認できる",
+      "result": "PASS"
+    },
+    {
+      "name": "確定済みメモをいったん消して書き直しても保存が止まらない",
+      "result": "PASS"
+    },
+    {
+      "name": "一覧の検索と状態フィルタが機能する",
+      "result": "PASS"
+    },
+    {
+      "name": "ZIPの画像・依頼文・バックアップが実データと一致する",
+      "result": "PASS"
+    },
+    {
+      "name": "赤枠の画像が描画され原画像を変更しない",
+      "result": "PASS"
+    },
+    {
+      "name": "HTML一覧にメモのHTMLを実行可能な形で出力しない",
+      "result": "PASS"
+    },
+    {
+      "name": "権限は手動起動タブだけ・外部接続なし",
+      "result": "PASS"
+    }
+  ],
+  "limitations": [
+    "DOM simulation and mocked Chrome extension APIs; no real Chrome extension installation or live website capture tested in this environment."
+  ]
+}

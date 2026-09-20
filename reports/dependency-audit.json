@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-19",
+  "source": "npm audit --json",
+  "vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "limits": "Registry advisories for locked installed packages only; not a proof of safety."
+}

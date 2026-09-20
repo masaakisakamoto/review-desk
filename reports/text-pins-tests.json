@@ -1,0 +1,37 @@
+{
+  "environment": "Node / happy-dom and fake-indexeddb; Range geometry and capture mocked; no real browser layout",
+  "tests": [
+    {
+      "name": "Legacy text pin uses selected glyphs, not the wide centered heading box",
+      "result": "PASS"
+    },
+    {
+      "name": "Document and nested-container scroll remeasure the text; offscreen pins disappear and return",
+      "result": "PASS"
+    },
+    {
+      "name": "Text pins follow width changes and wrapping even beyond the old 30px viewport guard",
+      "result": "PASS"
+    },
+    {
+      "name": "Selections crossing inline elements resolve to the first visible line fragment",
+      "result": "PASS"
+    },
+    {
+      "name": "New selection retains the chosen occurrence across save, import and subsequent DOM changes",
+      "result": "PASS"
+    },
+    {
+      "name": "Missing or ambiguous legacy text hides only the pin and keeps the note",
+      "result": "PASS"
+    },
+    {
+      "name": "Zero-size hidden text has no pin; left-edge text uses the right side",
+      "result": "PASS"
+    },
+    {
+      "name": "Element targets still use their box; malformed text anchors are discarded on import",
+      "result": "PASS"
+    }
+  ]
+}
