@@ -1,6 +1,6 @@
 # Review Desk 1.1.0-beta.3
 
-Publication draft. This file is prepared release text; it does not mean a GitHub release exists.
+Public beta source under MIT. Distribute this version as a GitHub **Pre-release**, with the validation limits below.
 
 Turn a website review into a portable change request.
 
@@ -22,15 +22,15 @@ No account or backend is required. Notes remain in the Chrome profile until the 
 
 ## Try it
 
-Extract the source ZIP to a permanent folder and load its `extension/` directory using Chrome's **Load unpacked** action. Follow [the English README](../README.md) or [日本語README](../README_JA.md).
+Download `ReviewDesk_1.1.0-beta.3_OSS.zip` from the release assets. Extract the source ZIP to a permanent folder and load its `extension/` directory using Chrome's **Load unpacked** action. Follow [the English README](../README.md) or [日本語README](../README_JA.md).
 
 If upgrading, export a backup for each project and follow [the update guide](UPDATE_EN.md). Keep the existing registered extension path and do not uninstall it. The Chrome manifest version is **1.1.0.3**; its version name is **1.1.0-beta.3**. This publication preparation changes documentation and packaging, not the beta.3 extension files or database format.
 
 ## Validation and limits
 
-The recorded automated runs pass 97 functional/startup/selection/update cases using simulated Chrome APIs and DOM geometry. They include real ZIP generation and image encoding. These are not real-browser end-to-end tests.
+[GitHub CI](https://github.com/masaakisakamoto/review-desk/actions/runs/35487399284) passed dependency installation, tests, static checks and packaging on Ubuntu 24.04 / Node 22.18.0. The recorded automated runs pass 97 functional/startup/selection/update cases using simulated Chrome APIs and DOM geometry. They include real ZIP generation and image encoding. These are not real-browser end-to-end tests.
 
-Real Chrome installation, live-tab capture, persistence after fully quitting Chrome and the macOS in-place upgrade remain unverified by the development environment. The originally reported Mac cold-start cause is unresolved. A previously supplied screenshot supports partial use only. See [the full validation report](VALIDATION.md) and [unfilled Chrome checklist](MANUAL_CHROME_CHECKLIST.md).
+Real Chrome installation, live-tab capture, persistence after fully quitting Chrome and the macOS in-place upgrade remain unverified by the development environment. The originally reported Mac cold-start cause is unresolved. The maintainer reported that beta.3 works for them; this is not a completed real-Chrome checklist. A previously supplied screenshot supports partial use only. See [the full validation report](VALIDATION.md) and [unfilled Chrome checklist](MANUAL_CHROME_CHECKLIST.md).
 
 Desktop Chrome and ordinary HTTP(S) pages are the intended scope. No mobile/Firefox/Safari support, OCR, live collaboration, cloud synchronization or direct AI connection is claimed. Sharing files is explicit; screenshots and page paths may contain private information. [Storage and privacy](../PRIVACY.md).
 

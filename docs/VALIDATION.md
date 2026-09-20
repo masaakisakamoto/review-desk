@@ -1,6 +1,6 @@
 # Validation report / 検証結果
 
-Updated for **1.1.0-beta.3** (selection interaction follow-up). Verdict: **ready for a local trial; public release gate remains open**.
+Updated for **1.1.0-beta.3** (selection interaction follow-up). Verdict: **public beta source with explicit real-Chrome verification gaps**.
 
 ## Results and their boundaries
 
@@ -18,7 +18,7 @@ Updated for **1.1.0-beta.3** (selection interaction follow-up). Verdict: **ready
 
 **97 automated cases passed (82 existing + 15 selection interaction cases).** This is a coverage statement for those cases, not a commercial-readiness score or a substitute for real Chrome.
 
-Execution environment: Linux, Node **24.19.0**, Python **3.12.14**; exact npm versions are in `package-lock.json` and `docs/DEPENDENCIES.json`. The prepared GitHub workflow uses Node 22.18.0 but has **not run on GitHub**. Node 22 is the declared development floor, not an additional tested environment here.
+Execution environment: Linux, Node **24.19.0**, Python **3.12.14**; exact npm versions are in `package-lock.json` and `docs/DEPENDENCIES.json`. The [GitHub Verify workflow](https://github.com/masaakisakamoto/review-desk/actions/runs/35487399284) also completed successfully on Ubuntu 24.04 with Node **22.18.0**, including dependency installation, `npm test`, static checks and packaging. Its updater tests use the synthetic old-tree fixture; the exact delivered beta.2 check above was run locally.
 
 The original 1.0.1 functional/startup suites also passed independently: 38 + 13. The previously reported four updater cases require a 1.0.0 code directory, which was not supplied. That old suite was not reclassified as a pass. The prior beta.1 validation used actual 1.0.1 bytes. This follow-up reran the seven-case updater suite using exact beta.2 bytes extracted from the delivered ZIP. Its default `npm test` run uses a synthetic old tree so new contributors can reproduce the contract tests without the private input package.
 
@@ -47,7 +47,7 @@ The original 1.0.1 functional/startup suites also passed independently: 38 + 13.
 | Original Mac startup failure                               | Cause unresolved. A recovered mocked read does not establish its diagnosis or resolution.                                                      |
 | Store installation/migration and enterprise-managed Chrome | Not run.                                                                                                                                       |
 
-Use `MANUAL_CHROME_CHECKLIST.md` to close these gaps on the maintainer's Mac before public release. Report the actual Chrome version and each result separately.
+Use `MANUAL_CHROME_CHECKLIST.md` to close these gaps on the maintainer's Mac before claiming stable support. Report the actual Chrome version and each result separately.
 
 ## Reproduce
 
@@ -70,7 +70,7 @@ Structured results: `reports/functional-tests.json`, `reports/startup-tests.json
 
 Japanese UI, desktop Chrome, HTTP(S) top-frame targets, visible viewport only, manually attached after images, explicit snapshots instead of live sync. Role labels are not permissions; selectors are hints; ordinary page paths and pixels may contain private information. No automatic masking, encryption, guaranteed storage lifetime, tamper-proof history, collaborative merge or direct AI connection. Source and captured content remain separate trust boundaries. Full details are in the READMEs and PRIVACY.md.
 
-日本語：この候補は、実装と模擬検証を終えた試用版です。起動・記録・保存・復元・書き出しについて自動検証は成功しましたが、実Chromeの代替として扱っていません。特にユーザーのMacでの初回停止原因、実際の撮影と再起動、既存版の拡張機能ID維持は公開前の残件です。
+日本語：この候補は、実装と模擬検証を終えた試用版です。起動・記録・保存・復元・書き出しについて自動検証は成功しましたが、実Chromeの代替として扱っていません。特にユーザーのMacでの初回停止原因、実際の撮影と再起動、既存版の拡張機能ID維持は引き続き実機での確認事項です。
 
 ## Maintainer feedback and this fix
 
@@ -84,4 +84,10 @@ Beta.3 adds pointer-based caret selection and contextual alternatives for links/
 
 `npm ci --ignore-scripts` completed from the locked dependencies; the 97-case suite, 22-file static check and the seven-case exact beta.2 update check were rerun successfully. The update cases are part of the 97 total, not additional coverage. The 24 shipped extension files and 18 source-package assets are byte-identical to the previously delivered beta.3. Browser discovery still exposed only the existing cloud browser, so the real-Chrome rows remain unfilled.
 
-Packaging review found that JSZip's implicit directory entries inherited the build time. Earlier duplicate-build checks did not establish reproducibility across different times. The packaging script now omits those unnecessary entries and fixes every file timestamp. This only changes ZIP container metadata; it does not change the extension's behavior or storage. The final publication preflight report accompanies the candidate archive; GitHub CI has still not run.
+Packaging review found that JSZip's implicit directory entries inherited the build time. Earlier duplicate-build checks did not establish reproducibility across different times. The packaging script now omits those unnecessary entries and fixes every file timestamp. This only changes ZIP container metadata; it does not change the extension's behavior or storage. The original publication preflight report accompanies the candidate archive. The subsequent GitHub CI run linked above passed.
+
+## Public repository verification — 2026-09-20
+
+All 120 initial repository file blobs matched the approved OSS candidate bytes; no extra files were present. The 24 extension files remain unchanged. Documentation is then updated to record publication, feedback and the verified private reporting route. GitHub browser uploads store `UPDATE_FROM_MAC.command` as mode 100644; the release ZIP explicitly preserves 100755. The documented `bash UPDATE_FROM_MAC.command` invocation works without the executable bit. No original project history was imported.
+
+The maintainer reported that `ReviewDesk_1.1.0-beta.3.zip` had no problems. This is user acceptance feedback, not a measured completion of every real-Chrome row above.

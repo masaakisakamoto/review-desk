@@ -1,28 +1,12 @@
-# Publication preparation / 公開前の確認
+# Publication status / 公開状況
 
-## Concrete candidate
+Review Desk 1.1.0-beta.3 is available as public MIT-licensed source in [masaakisakamoto/review-desk](https://github.com/masaakisakamoto/review-desk). The approved initial 120 files matched the reviewed source bytes. Documentation is updated for publication; all 24 extension files retain the tested beta.3 bytes.
 
-- Product: Review Desk — Local website reviews (working name; non-unique).
-- Version: `1.1.0-beta.3`; Chrome manifest `version: 1.1.0.3` and matching `version_name`.
-- Candidate GitHub destination: `masaakisakamoto/review-desk`. Owner was confirmed through the selected GitHub connection. Repository availability is not established. No creation, commit to a remote, push, merge or release publication was performed.
-- Prepared contents: independent extension source, MIT license, third-party notices, English/Japanese READMEs, fictional demo, sample packets, test code/results, CI workflow, privacy/security/contribution documents and portfolio copy.
-- Packaging: `npm run package` writes a source/trial ZIP and a store-layout candidate ZIP with `manifest.json` at its root. Neither operation publishes anything.
+The [first GitHub Verify run](https://github.com/masaakisakamoto/review-desk/actions/runs/35487399284) passed. Private vulnerability reporting is enabled; see [SECURITY.md](../SECURITY.md). [Publication record and release destination](PUBLISH_GITHUB.md).
 
-The source candidate is now named `ReviewDesk_1.1.0-beta.3_OSS_candidate.zip` to distinguish this publication preparation from the previously delivered trial ZIP. The extension's 24 files are unchanged. [Publication destination and sequence](PUBLISH_GITHUB.md) and [bilingual release text](RELEASE_NOTES_1.1.0-beta.3.md) are prepared. The original trial archive is retained separately.
+Distribute this version as a **Pre-release** with source, Chrome extension ZIP and SHA-256 checksums. The maintainer reported beta.3 works for them. Real-Chrome cold start, capture, full restart and macOS upgrade are still unverified by this environment; [the checklist](MANUAL_CHROME_CHECKLIST.md) remains incomplete. These are required before claiming stable support.
 
-The GitHub account was rechecked as `masaakisakamoto`. Repository search returned no match and a direct lookup returned 404; neither proves that the name is available. The browser connection visible to this Work is still the cloud browser. No Mac connection or additional actual-Chrome acceptance was established.
-
-The extension-only archive is `ReviewDesk_1.1.0-beta.3_Chrome_candidate.zip`. Packaging omits implicit directory entries, whose timestamps previously changed between builds even when file contents did not. Every file has a fixed ZIP timestamp. The prior trial ZIP remains a distinct artifact.
-
-## Gates before a public GitHub release
-
-1. Complete the real Chrome checklist, especially cold startup, capture, restart and exact-path upgrade. Current status: **not run**.
-2. Review the final source/asset/privacy report and confirm the supplied source may be released under MIT. No previous repository history is included.
-3. Confirm final owner/repository path and working name. Review Desk has existing name matches. Store naming and any trademark/domain review remain open.
-4. Enable private vulnerability reporting and publish a verified contact route.
-5. Ask the maintainer to approve the exact source archive, destination and public visibility. Remote creation, code push and any default-branch integration are distinct actions; none is automatically approved by this document.
-
-The provided CI workflow is ready to review but has not run on GitHub. Branch protection, private reporting, website hosting and release tags are not remotely configured.
+Review Desk has existing name matches. No uniqueness or trademark clearance is claimed. No Web Store listing is published. The original pre-publication candidate is retained as a separate reviewed artifact.
 
 ## Chrome Web Store preparation
 
@@ -43,4 +27,4 @@ Outstanding before submission: live Chrome gate; authentic screenshots recorded 
 
 The store candidate is a packaging aid, **not submission-ready approval**. A future Web Store installation uses a different identity from an unpacked extension unless explicitly handled. Export/import every project before switching; do not promise automatic migration.
 
-日本語：公開先・公開内容の候補は上記です。まず実機検証と名称・権利確認を完了し、具体的なZIPと公開先を提示して最終承認を受けます。この資料を作ったことは、GitHub公開・push・main統合・Web Store申請の承認ではありません。
+日本語：GitHubの公開ソースとCIは確認済みです。実機確認の残件を明記したβ版として配布し、Web Store申請・別サービスへの公開は行っていません。
