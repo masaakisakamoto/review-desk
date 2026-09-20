@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Desk — Guide</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body class="guide">
+    <div class="eyebrow">REVIEW DESK / LOCAL NOTES, PORTABLE REQUESTS</div>
+    <h1>指して、決めて、<br />修正後まで確かめる。</h1>
+    <p class="intro">
+      文字・画像・範囲を指定すると、画面とメモがこのChromeに残ります。外部へは自動送信しません。
+    </p>
+    <p>
+      <a class="button primary" href="demo.html">架空の画面で操作を練習</a>
+      <a class="button" href="desk.html">記録を開く</a>
+    </p>
+    <div class="notice">
+      練習画面の撮影は模擬画像です。実際のタブ撮影は、普通のWebページで拡張機能を起動して確認してください。
+    </div>
+    <section>
+      <h2>4つの操作</h2>
+      <ol>
+        <li>
+          拡張機能
+          →「この画面でメモする」。準備が終わったら「場所」「文字」「囲む」で対象を指定。
+        </li>
+        <li>
+          短いメモを書き、「端末に保存済み」を確認。「要相談・修正確定・保留」を選択。
+        </li>
+        <li>
+          一覧の「修正依頼を書き出す」。共有する番号と言語・画像の有無を確認してZIPを保存。
+        </li>
+        <li>
+          同じ指摘番号に修正後画像と確認結果を残し、確認待ち → 確認済みへ。
+        </li>
+      </ol>
+      <p>
+        Escで指定を中断。「見る」で通常のサイト操作に戻ります。画面の確認記録と、修正後の確認済みは別の記録です。
+      </p>
+    </section>
+    <section>
+      <h2>保存と更新</h2>
+      <p>
+        全件の保存は「バックアップ」。ごみ箱も含めます。読み込みは別の打ち合わせを作り、元の記録を保持します。旧版からの更新は登録済みのフォルダを同じ場所で置き換え、拡張機能IDを維持してください。削除して追加し直さないでください。
+      </p>
+      <p>
+        画像やURLのパスには画面に見える情報が含まれます。共有前に確認してください。拡張機能やプロファイルを削除するとデータを失う場合があります。
+      </p>
+    </section>
+    <section lang="en">
+      <h2>Quick guide</h2>
+      <ol>
+        <li>
+          Open the extension on an HTTP(S) page. Choose an element, selected
+          text or a region.
+        </li>
+        <li>
+          Write a note and wait for “端末に保存済み” (saved). Choose Discussion,
+          Approved or On hold.
+        </li>
+        <li>
+          Export only Approved + To do issues, or the full meeting. Pick English
+          for the request packet.
+        </li>
+        <li>
+          Attach an after image and record the result under the same issue code.
+          Mark it verified after checking.
+        </li>
+      </ol>
+      <p>
+        No account, telemetry, server or direct AI connection. Review data stays
+        in this browser profile until you explicitly share an exported file. The
+        practice page uses synthetic captures. This beta's real Chrome
+        installation and capture remain unverified in the development
+        environment.
+      </p>
+    </section>
+  </body>
+</html>

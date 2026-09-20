@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Review Desk — 記録と修正依頼</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body>
+    <div class="banner hidden" id="demoBanner">
+      操作練習モード / 撮影画像はサンプルです。拡張機能の保存領域とは別です。
+    </div>
+    <header class="app-head">
+      <div class="left">
+        <div class="eyebrow">REVIEW DESK / BETA 1.1</div>
+        <h1>話したことを、次の修正へ。</h1>
+      </div>
+      <div>
+        <div class="row wrap">
+          <button id="backup">バックアップ</button
+          ><button id="import">読み込む</button
+          ><button class="primary" id="export">修正依頼を書き出す ↗</button>
+        </div>
+        <div
+          id="globalStatus"
+          class="statusline"
+          role="status"
+          aria-live="polite"
+        >
+          端末の記録を読み込んでいます…
+        </div>
+      </div>
+    </header>
+    <div class="projectbar">
+      <div class="row wrap">
+        <select id="project" aria-label="打ち合わせを選択" disabled></select
+        ><button id="newProject" disabled>＋ 打ち合わせ</button
+        ><button id="rename" disabled>案件・役割の設定</button>
+      </div>
+      <div class="stats" id="stats"></div>
+    </div>
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="filters">
+          <input
+            id="search"
+            type="search"
+            placeholder="番号・メモ・画面名を検索"
+            aria-label="メモを検索"
+          />
+          <div class="row">
+            <select id="filter" aria-label="判断で絞り込み">
+              <option value="all">すべてのメモ</option>
+              <option value="decided">修正確定</option>
+              <option value="discuss">要相談</option>
+              <option value="hold">保留</option>
+              <option value="verify">修正後の確認待ち</option>
+              <option value="done">確認済み</option>
+              <option value="trash">ごみ箱</option></select
+            ><select id="roleFilter" aria-label="役割で絞り込み">
+              <option value="all">すべての役割</option>
+            </select>
+          </div>
+        </div>
+        <div class="notes" id="notes"></div>
+      </aside>
+      <section class="detail" id="detail" aria-label="指摘の詳細"></section>
+    </main>
+    <footer class="footer-note">
+      この端末のChromeに保存します。共有は書き出したファイルを渡すときだけ。<a
+        href="guide.html"
+        target="_blank"
+        >使い方 / Guide</a
+      >
+    </footer>
+    <input
+      class="hidden"
+      type="file"
+      id="importFile"
+      accept=".json,.review.json"
+    />
+    <dialog id="nameDialog">
+      <h2 id="dialogTitle">打ち合わせの設定</h2>
+      <form id="nameForm">
+        <label
+          >案件・打ち合わせ名<input
+            id="newName"
+            maxlength="120"
+            required /></label
+        ><label
+          >確認する役割（1行に1つ）<textarea
+            id="newRoles"
+            rows="5"
+            placeholder="クライアント&#10;デザイナー&#10;開発者"
+          ></textarea>
+        </label>
+        <p class="muted">
+          役割は記録のラベルです。アクセス権限は変更しません。既存のメモの役割は保持されます。
+        </p>
+        <div class="row">
+          <button type="button" id="cancelName">キャンセル</button
+          ><button class="primary" type="submit">保存</button>
+        </div>
+        <p id="settingsError" class="error" role="status"></p>
+      </form>
+    </dialog>
+    <dialog id="exportDialog">
+      <h2>共有する内容を確認</h2>
+      <p>この操作ではファイルを端末に保存します。</p>
+      <label
+        >書き出す記録<select id="exportScope">
+          <option value="request">修正確定・未対応だけ（実装依頼）</option>
+          <option value="meeting">打ち合わせ全体（確認結果も含む）</option>
+        </select></label
+      ><label
+        >依頼文の言語 / Request language<select id="exportLanguage">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select></label
+      ><label class="check"
+        ><input
+          type="checkbox"
+          id="exportImages"
+          checked
+        />画面・参考・修正後の画像を含める</label
+      >
+      <p class="muted">
+        画像、URLのパス、メモには画面上の情報が含まれます。一覧で内容を確認してから共有してください。ごみ箱は含みません。
+      </p>
+      <div id="exportPreview" class="notice"></div>
+      <div class="row">
+        <button id="cancelExport">キャンセル</button
+        ><button id="confirmExport" class="primary">ZIPを保存</button>
+      </div>
+    </dialog>
+    <dialog id="zoom">
+      <div class="row">
+        <h2>記録した画像</h2>
+        <button id="closeZoom">閉じる</button>
+      </div>
+      <img id="zoomImage" alt="記録した画像を拡大" />
+    </dialog>
+    <script src="core.js"></script>
+    <script src="db.js"></script>
+    <script src="vendor/jszip.min.js"></script>
+    <script src="export.js"></script>
+    <script src="desk.js"></script>
+  </body>
+</html>
